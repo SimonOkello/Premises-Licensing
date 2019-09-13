@@ -72,29 +72,21 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <i class="fas fa-map-marked-alt"></i>
+          <span>Regions</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+          <a class="dropdown-item" href="mombasa.php">Mombasa</a>
+          <a class="dropdown-item" href="nairobi.php">Nairobi</a>
+          <a class="dropdown-item" href="busia.php">Busia</a>
           <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item active" href="blank.html">Blank Page</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link" href="report.php">
+          <i class="far fa-file-alt"></i>
+          <span>Reports</span>
+        </a>
       </li>
     </ul>
 
@@ -167,7 +159,7 @@
               </div>
             </div>
             <br><br><br><br><br><br>
-            <table id="dtBasicExample" class="table table-striped table-bordered table-sm w-auto table-responsive" cellspacing="0" width="100%">
+            <table id="example" class="table table-striped table-bordered table-sm w-auto table-responsive" cellspacing="0" width="100%">
               <thead class="thead-dark">
                 <tr>
                   <th class="th-sm">Premise No.</th>
@@ -204,7 +196,6 @@
 
               </tbody>
             </table>
-
           </div>
           <!-- /.container-fluid -->
 
@@ -212,7 +203,7 @@
           <footer class="sticky-footer">
             <div class="container my-auto">
               <div class="copyright text-center my-auto">
-                <span>Copyright �2019 PCPB. All rights resrved.</span>
+                <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
               </div>
             </div>
           </footer>
@@ -251,14 +242,8 @@
 
       <!-- Custom scripts for all pages-->
       <script src="js/sb-admin.min.js"></script>
+      <script src="js/custom.js"></script>
 
 </body>
-<script>
-  //pagination
-  $(document).ready(function() {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-  });
-</script>
 
 </html>
