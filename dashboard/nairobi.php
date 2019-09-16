@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1" href="index.html">Premises Licensing</a>
+        <a class="navbar-brand mr-1" href="home.php">Premises Licensing</a>
 
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
@@ -65,7 +65,7 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -76,9 +76,10 @@
                     <span>Regions</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-                    <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-                    <a class="dropdown-item" href="busia.php">Busia</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                     <div class="dropdown-divider"></div>
                 </div>
             </li>
@@ -97,9 +98,9 @@
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Dashboard</a>
+                        <a href="home.php">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item active">Nairobi</li>
                 </ol>
 
                 <!-- Page Content -->
@@ -109,17 +110,17 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales">
-                                <h2>Recent License</h2>
+                                <h5>Recent License</h5>
 
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Mombasa</a>
-                                        <a class="dropdown-item" href="#">Nairobi</a>
-                                        <a class="dropdown-item" href="#">Western</a>
-                                        <a class="dropdown-item" href="#">Naivasha</a>
+                                        <a class="dropdown-item" href="mombasa.php">COAST</a>
+                                        <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,16 +128,16 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Active Status</h2>
+                                <h5>Active Status</h5>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Mombasa</a>
-                                        <a class="dropdown-item" href="#">Nairobi</a>
-                                        <a class="dropdown-item" href="#">Western</a>
-                                        <a class="dropdown-item" href="#">Naivasha</a>
+                                        <a class="dropdown-item" href="mombasa.php">COAST</a>
+                                        <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
@@ -144,16 +145,16 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Inactive Status</h2>
+                                <h5>Inactive Status</h5>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Mombasa</a>
-                                        <a class="dropdown-item" href="#">Nairobi</a>
-                                        <a class="dropdown-item" href="#">Western</a>
-                                        <a class="dropdown-item" href="#">Naivasha</a>
+                                        <a class="dropdown-item" href="mombasa.php">COAST</a>
+                                        <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +174,8 @@
                                     <th class="th-sm">Plot No.</th>
                                     <th class="th-sm">License No.</th>
                                     <th class="th-sm">Reg Date</th>
-                                    <th class="th-sm">Status</th>
+                                    <th class="th-sm">Status/Until</th>
+                                    <th class="th-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -189,7 +191,10 @@
                                     <td>PLT002</td>
                                     <td>30225</td>
                                     <td>13/09/2019</td>
-                                    <td>Active</td>
+                                    <td>Active|Until: 31/12/2019</td>
+                                    <td>
+                                    <p><a href="edit.php"><i class="fas fa-edit"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -201,7 +206,7 @@
                     <footer class="sticky-footer">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto">
-                                <span>Copyright �2019 PCPB. All rights resrved.</span>
+                                <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
                             </div>
                         </div>
                     </footer>
@@ -240,14 +245,16 @@
 
             <!-- Custom scripts for all pages-->
             <script src="js/sb-admin.min.js"></script>
+            <script>
+                //pagination
+                $(document).ready(function() {
+                    $('#dtBasicExample').DataTable({
+                        "searching": true // false to disable search (or any other option)
+                    });
+                    $('.dataTables_length').addClass('bs-select');
+                });
+            </script>
 
 </body>
-<script>
-    //pagination
-    $(document).ready(function() {
-        $('#dtBasicExample').DataTable();
-        $('.dataTables_length').addClass('bs-select');
-    });
-</script>
 
 </html>

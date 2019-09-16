@@ -28,7 +28,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand mr-1" href="index.html">Premise Licensing</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -79,9 +79,10 @@
           <span>Regions</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-          <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-          <a class="dropdown-item" href="busia.php">Busia</a>
+          <a class="dropdown-item" href="mombasa.php">COAST</a>
+          <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+          <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+          <a class="dropdown-item" href="#">SOUTH RIFT</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>
@@ -100,7 +101,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
+            <a href="home.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -261,7 +262,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright ©2019 PCPB</span>
+              <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
             </div>
           </div>
         </footer>

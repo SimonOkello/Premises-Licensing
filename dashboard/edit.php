@@ -65,7 +65,7 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -76,9 +76,10 @@
                     <span>Regions</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-                    <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-                    <a class="dropdown-item" href="busia.php">Busia</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="mountkenya.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="southrift.php">SOUTH RIFT</a>
                     <div class="dropdown-divider"></div>
                 </div>
             </li>
@@ -115,31 +116,31 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6">
                                         <label for="premise_no">Premise Number:</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="text" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="premise_name">Premise Name:</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="text" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="email">Premise Type:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email">Tel No.:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="email">Email:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email">Address:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -165,27 +166,27 @@
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="email">Ward:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email">Town:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="email">Street:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email">Plot No.:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="email">License No.:</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                        <input type="email" class="form-control" id="email" name="email">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email">Status.:</label>

@@ -76,9 +76,10 @@
                     <span>Regions</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-                    <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-                    <a class="dropdown-item" href="busia.php">Busia</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                     <div class="dropdown-divider"></div>
                 </div>
             </li>
@@ -97,7 +98,7 @@
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Dashboard</a>
+                        <a href="home.php">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active">Home</li>
                 </ol>

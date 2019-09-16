@@ -76,9 +76,10 @@
           <span>Regions</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-          <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-          <a class="dropdown-item" href="busia.php">Busia</a>
+          <a class="dropdown-item" href="mombasa.php">COAST</a>
+          <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+          <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+          <a class="dropdown-item" href="#">SOUTH RIFT</a>
           <div class="dropdown-divider"></div>
         </div>
       </li>
@@ -97,7 +98,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
+            <a href="home.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">Home</li>
         </ol>
@@ -109,17 +110,17 @@
             <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
               <div class="sales">
-                <h2>Recent License</h2>
+                <h5>Recent License</h5>
 
                 <div class="btn-group">
-                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Region:</span> County
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-                    <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-                    <a class="dropdown-item" href="busia.php">Busia</a>
-                    <a class="dropdown-item" href="#">Naivasha</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                   </div>
                 </div>
               </div>
@@ -127,16 +128,16 @@
             <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
               <div class="sales report">
-                <h2>Active Status</h2>
+                <h5>Active Status</h5>
                 <div class="btn-group">
-                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Region:</span> County
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Mombasa</a>
-                    <a class="dropdown-item" href="#">Nairobi</a>
-                    <a class="dropdown-item" href="#">Busia</a>
-                    <a class="dropdown-item" href="#">Naivasha</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                   </div>
                 </div>
               </div>
@@ -144,16 +145,16 @@
             <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
               <div class="sales report">
-                <h2>Inactive Status</h2>
+                <h5>Inactive Status</h5>
                 <div class="btn-group">
-                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span>Region:</span> County
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Mombasa</a>
-                    <a class="dropdown-item" href="#">Nairobi</a>
-                    <a class="dropdown-item" href="#">Busia</a>
-                    <a class="dropdown-item" href="#">Naivasha</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                   </div>
                 </div>
               </div>
@@ -166,36 +167,41 @@
                 <div class="form-group row">
                   <div class="col-sm-6">
                     <label for="premise_no">Premise Number:</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="text" class="form-control"  placeholder="PMK0000.." name="email">
                   </div>
                   <div class="col-sm-6">
                     <label for="premise_name">Premise Name:</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="text" class="form-control" placeholder="Name of company/business" name="email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-6">
-                    <label for="email">Premise Type:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="premise_type">Premise Type:</label>
+                    <select class="form-control">
+                      <option>Retail</option>
+                      <option>Storage & Use</option>
+                      <option>Wholesale/Retail</option>
+                      <option>Distribution/Wholesale/Retail</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="email">Tel No.:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="tel_no">Tel No.:</label>
+                    <input type="text" class="form-control"  placeholder="Tel" name="email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-6">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
                   </div>
                   <div class="col-md-6">
-                    <label for="email">Address:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" placeholder="P.O. Box...." name="email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-6">
-                    <label for="email">County:</label>
+                    <label for="county">County:</label>
                     <select class="form-control">
                       <option>Mombasa</option>
                       <option>Nairobi</option>
@@ -204,7 +210,7 @@
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="email">SubCounty:</label>
+                    <label for="subcoutny">SubCounty:</label>
                     <select class="form-control">
                       <option>Kisauni</option>
                       <option>Starehe</option>
@@ -215,31 +221,31 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-md-6">
-                    <label for="email">Ward:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="ward">Ward:</label>
+                    <input type="text" class="form-control"  placeholder="ward" name="email">
                   </div>
                   <div class="col-md-6">
-                    <label for="email">Town:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-md-6">
-                    <label for="email">Street:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="email">Plot No.:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="town">Town:</label>
+                    <input type="text" class="form-control"  placeholder="town" name="email">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-6">
-                    <label for="email">License No.:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="street">Street:</label>
+                    <input type="text" class="form-control"  placeholder="street" name="email">
                   </div>
                   <div class="col-md-6">
-                    <label for="email">Status.:</label>
+                    <label for="plot_no">Plot No.:</label>
+                    <input type="text" class="form-control"  placeholder="0000/000" name="email">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <label for="license_no">License No.:</label>
+                    <input type="text" class="form-control"  placeholder="1234" name="email">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="status">Status.:</label>
                     <select class="form-control">
                       <option>Active</option>
                       <option>Inactive</option>
@@ -259,7 +265,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright ©2019 PCPB. All rights resrved.</span>
+              <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
             </div>
           </div>
         </footer>
@@ -298,14 +304,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
-
+    
 </body>
-<script>
-  //pagination
-  $(document).ready(function() {
-    $('#dtBasicExample').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-  });
-</script>
+
 
 </html>

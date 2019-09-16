@@ -76,9 +76,10 @@
                     <span>Regions</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                    <a class="dropdown-item" href="mombasa.php">Mombasa</a>
-                    <a class="dropdown-item" href="nairobi.php">Nairobi</a>
-                    <a class="dropdown-item" href="busia.php">Busia</a>
+                    <a class="dropdown-item" href="mombasa.php">COAST</a>
+                    <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
+                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
                     <div class="dropdown-divider"></div>
                 </div>
             </li>
@@ -97,9 +98,9 @@
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Dashboard</a>
+                        <a href="home.php">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Home</li>
+                    <li class="breadcrumb-item active">Mount Kenya</li>
                 </ol>
 
                 <!-- Page Content -->
@@ -109,10 +110,10 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales">
-                                <h2>Recent License</h2>
+                                <h5>Recent License</h5>
 
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
@@ -127,9 +128,9 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Active Status</h2>
+                                <h5>Active Status</h5>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
@@ -144,9 +145,9 @@
                         <div class="col-md-4 col-sm-4 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Inactive Status</h2>
+                                <h5>Inactive Status</h5>
                                 <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>Region:</span> County
                                     </button>
                                     <div class="dropdown-menu">
@@ -202,7 +203,7 @@
                     <footer class="sticky-footer">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto">
-                                <span>Copyright �2019 PCPB. All rights resrved.</span>
+                                <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
                             </div>
                         </div>
                     </footer>
