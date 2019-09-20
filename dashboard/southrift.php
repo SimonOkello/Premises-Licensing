@@ -175,6 +175,7 @@
                                     <th class="th-sm">License No.</th>
                                     <th class="th-sm">Reg Date</th>
                                     <th class="th-sm">Status</th>
+                                    <th class="th-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -191,6 +192,9 @@
                                     <td>30225</td>
                                     <td>13/09/2019</td>
                                     <td>Active</td>
+                                    <td>
+                                    <p><a href="edit.php"><i class="fas fa-edit"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Premises|Home</title>
+    <title>Premises|Mt.Kenya</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -65,7 +65,7 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -175,6 +175,7 @@
                                     <th class="th-sm">License No.</th>
                                     <th class="th-sm">Reg Date</th>
                                     <th class="th-sm">Status</th>
+                                    <th class="th-sm">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -191,6 +192,9 @@
                                     <td>30225</td>
                                     <td>13/09/2019</td>
                                     <td>Active</td>
+                                    <td>
+                                    <p><a href="edit.php"><i class="fas fa-edit"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
+                                    </td>
                                 </tr>
 
                             </tbody>
