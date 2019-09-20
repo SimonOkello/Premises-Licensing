@@ -78,8 +78,8 @@
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="mombasa.php">COAST</a>
                     <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
-                    <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
-                    <a class="dropdown-item" href="#">SOUTH RIFT</a>
+                    <a class="dropdown-item" href="mountkenya.php">MOUNT KENYA</a>
+                    <a class="dropdown-item" href="southrift.php">SOUTH RIFT</a>
                     <div class="dropdown-divider"></div>
                 </div>
             </li>
@@ -119,8 +119,8 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="mombasa.php">COAST</a>
                                         <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
-                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
-                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
+                                        <a class="dropdown-item" href="mountkenya.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="southrift.php">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +136,8 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="mombasa.php">COAST</a>
                                         <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
-                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
-                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
+                                        <a class="dropdown-item" href="mountkenya.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="southrift.php">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,8 +153,8 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="mombasa.php">COAST</a>
                                         <a class="dropdown-item" href="nairobi.php">NAIROBI</a>
-                                        <a class="dropdown-item" href="busia.php">MOUNT KENYA</a>
-                                        <a class="dropdown-item" href="#">SOUTH RIFT</a>
+                                        <a class="dropdown-item" href="mountkenya.php">MOUNT KENYA</a>
+                                        <a class="dropdown-item" href="southrift.php">SOUTH RIFT</a>
                                     </div>
                                 </div>
                             </div>
