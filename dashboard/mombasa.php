@@ -159,47 +159,40 @@
                 </div>
               </div>
             </div>
-            <br><br><br><br><br><br>
-            <table id="example" class="table table-striped table-bordered table-sm w-auto table-responsive" cellspacing="0" width="100%">
-              <thead class="thead-dark">
-                <tr>
-                  <th class="th-sm">Premise No.</th>
-                  <th class="th-sm">Name</th>
-                  <th class="th-sm">Type</th>
-                  <th class="th-sm">Tel.</th>
-                  <th class="th-sm">Email</th>
-                  <th class="th-sm">Address</th>
-                  <th class="th-sm">County</th>
-                  <th class="th-sm">Street</th>
-                  <th class="th-sm">Plot No.</th>
-                  <th class="th-sm">License No.</th>
-                  <th class="th-sm">Reg Date</th>
-                  <th class="th-sm">Status/Until</th>
-                  <th class="th-sm">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>PMK0001</td>
-                  <td>Galilee Agrovet</td>
-                  <td>Retail</td>
-                  <td>1234567890</td>
-                  <td>galilee@gmail.com</td>
-                  <td>P.O Box 1084,Embu</td>
-                  <td>Embu</td>
-                  <td>Muthatari</td>
-                  <td>PLT002</td>
-                  <td>30225</td>
-                  <td>13/09/2019</td>
-                  <td>Active|Until: 31/12/2019</td>
-                  <td>
-                    <p><a href="edit.php"><i class="fas fa-edit"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
           </div>
+            <br><br><br>
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
+  <thead class="thead-dark">
+    <tr>
+      <th class="th-sm">Premise No.</th>
+      <th class="th-sm">Name</th>
+      <th class="th-sm">County</th>
+      <th class="th-sm">License No.</th>
+      <th class="th-sm">Status</th>
+      <th class="th-sm">Expiry</th>
+      <th class="th-sm">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PMK0001</td>
+      <td>Galilee Agrovet</td>
+      <td>Embu</td>
+      <td>30225</td>
+      <td>Active</td>
+      <td>31/12/2019</td>
+      <td>
+                    <p><a href="view.php"><i class="fas fa-eye"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
+                  </td>
+    </tr>
+    
+  </tbody>
+</table>
+         
+   
+    
+
+        
           <!-- /.container-fluid -->
 
           <!-- Sticky Footer -->
@@ -210,10 +203,10 @@
               </div>
             </div>
           </footer>
-
+</div>
         </div>
         <!-- /.content-wrapper -->
-
+</div>
       </div>
       <!-- /#wrapper -->
 

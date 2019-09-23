@@ -1,3 +1,8 @@
+/*start sessions*/
+<?
+session_start();
+include "db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,16 +34,34 @@
         <div class="main">
             <div class="col-md-6 col-sm-12">
                 <div class="login-form">
-                    <form action="dashboard/home.php" method="post">
+                    <?php
+  if(isset($_POST['submit'])){
+    $username=htmlentities($_POST['username']);
+    $password=htmlentities($_POST['password']);
+    $query="SELECT username FROM users WHERE username ='$username' && password='$password'";
+    $result=mysqli_query($conn, $query);
+    if ($result){
+    while($row = mysqli_fetch_array($result)){
+        $SESSION["id"] = $username;
+        header("Location:home.php");
+      }
+    }else{
+      echo "<script type='text/javascript'>alert('Username/Password incorrect')</script>";
+    }
+}
+    
+  
+       ?>
+                    <form action="index.php" method="POST">
                         <div class="form-group">
                             <label><strong>Username</strong></label>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" name="username" class="form-control" placeholder="Username" required>
                         </div>
                         <div class="form-group">
                             <label><strong>Password</strong></label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
-                        <input type="submit" value="Login" class="btn btn-primary">
+                        <input type="submit" value="Login" name ="submit" class="btn btn-primary">
                         <p> <a href="forgot-password.php">Forgot Password?</a></p>
                     </form>
                 </div>
