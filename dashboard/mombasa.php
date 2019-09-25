@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -161,33 +165,41 @@
             </div>
           </div>
             <br><br><br>
-<table id="dtBasicExample" class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
-  <thead class="thead-dark">
-    <tr>
-      <th class="th-sm">Premise No.</th>
-      <th class="th-sm">Name</th>
-      <th class="th-sm">County</th>
-      <th class="th-sm">License No.</th>
-      <th class="th-sm">Status</th>
-      <th class="th-sm">Expiry</th>
-      <th class="th-sm">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>PMK0001</td>
-      <td>Galilee Agrovet</td>
-      <td>Embu</td>
-      <td>30225</td>
-      <td>Active</td>
-      <td>31/12/2019</td>
-      <td>
-                    <p><a href="view.php"><i class="fas fa-eye"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
-                  </td>
-    </tr>
-    
-  </tbody>
-</table>
+            <?php
+
+            $sql = 'SELECT * FROM premises';
+         $result = mysqli_query($conn, $sql);
+
+         if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+      echo"<table class='table table-striped table-bordered table-sm'>
+<tr>
+  <th>Premise No.</th>
+      <th>Name</th>
+      <th>County</th>
+      <th>License No.</th>
+      <th>Status</th>
+      <th>Expiry</th>
+      <th>Action</th>
+  </tr>";
+  while($row=mysql_fetch_array($result)){
+  echo "<tr>";
+echo "<td>".$row['premise_no']."</td>";
+echo "<td>".$row['premise_name']."</td>";
+echo "<td>".$row['county']."</td>";
+echo "<td>".$row['license_no']."</td>";
+echo "<td>".$row['status']."</td>";
+echo "<td>".$row['expiry']."</td>";
+echo "</tr>";
+}
+echo "</table>";
+}
+}
+?>
+
+             
+
+
          
    
     

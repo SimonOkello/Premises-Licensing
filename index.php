@@ -1,7 +1,30 @@
-/*start sessions*/
-<?
+<?php
 session_start();
-include "db.php";
+require_once('db.php');
+/*$email = $password = $pwd = '';*/
+if (isset($_POST["submit"])) {
+   
+$username = $_POST['username'];
+$password = $_POST['password'];
+$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = mysqli_query($conn, $sql);
+if(mysqli_num_rows($result) > 0)
+{
+    while($row = mysqli_fetch_assoc($result))
+    {
+        $user_id = $row["user_id"];
+        $username = $row["username"];
+        
+        $_SESSION['user_id'] = $user_id;
+        $_SESSION['username'] = $username;
+    }
+    header("Location: dashboard/home.php");
+}
+else
+{
+       echo "<script type='text/javascript'>alert('Username/Password incorrect')</script>"; 
+}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +36,7 @@ include "db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+ 
     <title>Premises|Get Started</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -33,26 +56,8 @@ include "db.php";
         </div>
         <div class="main">
             <div class="col-md-6 col-sm-12">
-                <div class="login-form">
-                    <?php
-  if(isset($_POST['submit'])){
-    $username=htmlentities($_POST['username']);
-    $password=htmlentities($_POST['password']);
-    $query="SELECT username FROM users WHERE username ='$username' && password='$password'";
-    $result=mysqli_query($conn, $query);
-    if ($result){
-    while($row = mysqli_fetch_array($result)){
-        $SESSION["id"] = $username;
-        header("Location:home.php");
-      }
-    }else{
-      echo "<script type='text/javascript'>alert('Username/Password incorrect')</script>";
-    }
-}
-    
-  
-       ?>
-                    <form action="index.php" method="POST">
+                <div class="login-form">                        
+                        <form action="index.php" method="POST">
                         <div class="form-group">
                             <label><strong>Username</strong></label>
                             <input type="text" name="username" class="form-control" placeholder="Username" required>
