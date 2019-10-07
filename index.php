@@ -23,6 +23,7 @@ if(mysqli_num_rows($result) > 0)
 else
 {
        echo "<script type='text/javascript'>alert('Username/Password incorrect')</script>"; 
+       
 }
 }
 ?>
