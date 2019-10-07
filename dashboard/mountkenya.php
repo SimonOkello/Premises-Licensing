@@ -1,3 +1,12 @@
+<?php
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "premises");
+
+if (!$conn) {
+  echo "Database connection failed...";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -160,39 +169,45 @@
               </div>
             </div>
           </div>
-            <br><br><br>
-<table id="dtBasicExample" class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
-  <thead class="thead-dark">
-    <tr>
-      <th class="th-sm">Premise No.</th>
-      <th class="th-sm">Name</th>
-      <th class="th-sm">County</th>
-      <th class="th-sm">License No.</th>
-      <th class="th-sm">Status</th>
-      <th class="th-sm">Expiry</th>
-      <th class="th-sm">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>PMK0001</td>
-      <td>Galilee Agrovet</td>
-      <td>Embu</td>
-      <td>30225</td>
-      <td>Active</td>
-      <td>31/12/2019</td>
-      <td>
-                    <p><a href="view.php"><i class="fas fa-eye"></i></a><br><a href="edit.php"><i class="fas fa-trash"></i></a></p>
-                  </td>
-    </tr>
-    
-  </tbody>
-</table>
-         
-   
-    
+          <br><br><br>
+          <?php
 
-        
+          $sql = 'SELECT * FROM mountkenya';
+          $result = mysqli_query($conn, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo "<table class='table table-striped table-bordered table-sm'>
+<tr>
+  <th>Premise No.</th>
+      <th>Name</th>
+      <th>County</th>
+      <th>License No.</th>
+      <th>Status</th>
+      <th>Expiry</th>
+      <th>Action</th>
+  </tr>";
+              while ($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['premise_no'] . "</td>";
+                echo "<td>" . $row['premise_name'] . "</td>";
+                echo "<td>" . $row['county'] . "</td>";
+                echo "<td>" . $row['license_no'] . "</td>";
+                echo "<td>" . $row['status'] . "</td>";
+                echo "<td>" . $row['expiry'] . "</td>";
+                echo '<td><div align="center"><a rel="facebox" href="?id=' . $row['s/no'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['s/no'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
+                echo "</tr>";
+              }
+              echo "</table>";
+            }
+          }
+          ?>
+
+
+
+
+
+
           <!-- /.container-fluid -->
 
           <!-- Sticky Footer -->
@@ -203,42 +218,42 @@
               </div>
             </div>
           </footer>
-</div>
-        </div>
-        <!-- /.content-wrapper -->
-</div>
-      </div>
-      <!-- /#wrapper -->
-
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">�</span>
-              </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="../">Logout</a>
-            </div>
-          </div>
         </div>
       </div>
+      <!-- /.content-wrapper -->
+    </div>
+  </div>
+  <!-- /#wrapper -->
 
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">�</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="../">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin.min.js"></script>
-      <script src="js/custom.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <script src="js/custom.js"></script>
 
 </body>
 

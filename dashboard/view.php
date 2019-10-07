@@ -1,3 +1,13 @@
+<?php
+session_start();
+$conn = mysqli_connect("localhost", "root", "", "premises");
+
+if (!$conn) {
+    echo "Database connection failed...";
+}
+
+$s_no = $_GET['s/no'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,54 +118,55 @@
 
                     <div class="row">
 
-                        
+
                         <div class="container">
                             <h2>Premise Details</h2>
                             <div class="row">
-    
-                                                    
-      <form action="profile.php" method="POST" role="form" class="form-horizontal">
-  <div class="form-group row">
-    <div class="col-md-4">
-    <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
-    <div class="col-sm-2">
-     <?php echo $row['reg_no']; ?>
-    </div>
-</div>
-<div class="col-md-4">
-    <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
-    <div class="col-sm-2">
-     <?php echo $row['reg_no']; ?>
-    </div>
-</div>
-<div class="col-md-4">
-    <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
-    <div class="col-sm-2">
-     <?php echo $row['reg_no']; ?>
-    </div>
-</div>
-<div class="col-md-4">
-    <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
-    <div class="col-sm-2">
-     <?php echo $row['reg_no']; ?>
-    </div>
-</div>
-</div>
-  
-  <div class="form-group row">
-    <div class="col-md-4">
-      <button type="button" class="btn btn-primary" value="Update profile" onclick="window.location.href='student_update.php'"> Update</button> 
-  </div>
-</div>
-</form>
-                             
-                            
-                        
-                    </div>
-                    </div>
+
+
+                                <form action="view.php" method="POST" role="form" class="form-horizontal">
+                                    <input type="hidden" name="s_no" value="<?php echo $s_no = $_GET['s/no'] ?>">
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <label class="control-label col-sm-2" for="premise_no">Premise Number:</label>
+                                            <div class="col-sm-2">
+                                                <?php echo $row['premise_no']; ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
+                                            <div class="col-sm-2">
+                                                <?php echo $row['reg_no']; ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
+                                            <div class="col-sm-2">
+                                                <?php echo $row['reg_no']; ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="control-label col-sm-2" for="reg_no">RegNumber:</label>
+                                            <div class="col-sm-2">
+                                                <?php echo $row['reg_no']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary" value="Update profile" onclick="window.location.href='student_update.php'"> Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+                            </div>
                         </div>
                     </div>
-                
+                </div>
+
 
                 <!-- /.container-fluid -->
 
