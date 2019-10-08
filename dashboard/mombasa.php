@@ -1,10 +1,6 @@
 <?php
 session_start();
-            $conn = mysqli_connect("localhost", "root", "", "premises");
 
-            if (!$conn) {
-              echo "Database connection failed...";
-            }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,15 +164,19 @@ session_start();
               </div>
             </div>
           </div>
-            <br><br><br>
-            <?php
+          <br><br><br>
+          <?php
+          $conn = mysqli_connect("localhost", "root", "", "premises");
+          if (!$conn) {
+          echo "Database connection failed...";
+            }
+          $sql = 'SELECT * FROM coast';
+          $result = mysqli_query($conn, $sql);
 
-            $sql = 'SELECT * FROM coast';
-         $result = mysqli_query($conn, $sql);
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
 
-         if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-      echo"<table class='table table-striped table-bordered table-sm'>
+              echo "<table class='table table-striped table-bordered table-sm'>
 <tr>
   <th>Premise No.</th>
       <th>Name</th>
@@ -186,30 +186,33 @@ session_start();
       <th>Expiry</th>
       <th>Action</th>
   </tr>";
-            while($row=mysqli_fetch_array($result)){
-  echo "<tr>";
-echo "<td>".$row['premise_no']."</td>";
-echo "<td>".$row['premise_name']."</td>";
-echo "<td>".$row['county']."</td>";
-echo "<td>".$row['license_no']."</td>";
-echo "<td>".$row['status']."</td>";
-echo "<td>".$row['expiry']."</td>";
-echo '<td><div align="center"><a rel="facebox" href="view.php?id=' . $row['s/no'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['s/no'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
-echo "</tr>";
-}
-echo "</table>";
-}
-}
-?>
+              while ($row = mysqli_fetch_array($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['premise_no'] . "</td>";
+                echo "<td>" . $row['premise_name'] . "</td>";
+                echo "<td>" . $row['county'] . "</td>";
+                echo "<td>" . $row['license_no'] . "</td>";
+                echo "<td>" . $row['status'] . "</td>";
+                echo "<td>" . $row['expiry'] . "</td>";
+                echo '<td><div align="center"><a rel="facebox" href="view_coast.php?id=' . $row['pr_id'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['pr_id'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
+                echo "</tr>";
+              }
+              echo "</table>";
+            }
+          }
+          ?>
+          <form>
+            <input type="hidden" name="pr_id" value="<?php echo $row['pr_id']; ?>" />
+          </form>
 
-             
 
 
-         
-   
-    
 
-        
+
+
+
+
+
           <!-- /.container-fluid -->
 
           <!-- Sticky Footer -->
@@ -220,42 +223,42 @@ echo "</table>";
               </div>
             </div>
           </footer>
-</div>
-        </div>
-        <!-- /.content-wrapper -->
-</div>
-      </div>
-      <!-- /#wrapper -->
-
-      <!-- Logout Modal-->
-      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">�</span>
-              </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-              <a class="btn btn-primary" href="../">Logout</a>
-            </div>
-          </div>
         </div>
       </div>
+      <!-- /.content-wrapper -->
+    </div>
+  </div>
+  <!-- /#wrapper -->
 
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">�</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="../">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin.min.js"></script>
-      <script src="js/custom.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+  <script src="js/custom.js"></script>
 
 </body>
 

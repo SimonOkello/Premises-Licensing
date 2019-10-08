@@ -103,7 +103,7 @@ session_start();
                     <li class="breadcrumb-item">
                         <a href="index.html">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Edit</li>
+                    <li class="breadcrumb-item active">View</li>
                 </ol>
 
                 <!-- Page Content -->
@@ -111,10 +111,9 @@ session_start();
 
                     <div class="row">
 
-                        <br><br><br><br><br><br>
-                        <!--Add Premise-->
+
                         <div class="container">
-                            <h2>Edit Premise</h2>
+                            <h3 style="color:dodgerblue">Premise Details</h3>
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "premises");
                             if (!$conn) {
@@ -122,102 +121,135 @@ session_start();
                             }
                             if (isset($_GET['id'])) {
                                 $pr_id = $_GET['id'];
-                                $query = "SELECT * FROM coast where pr_id= '$pr_id'";
+                                $query = "SELECT * FROM mountkenya where pr_id= '$pr_id' ";
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                             }
                             ?>
-                            <form action="edit.php">
+                            <form action="view.php" method="POST" role="form" class="form-horizontal">
                                 <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <label for="premise_no">Premise Number:</label>
-                                        <input type="text" class="form-control" id="email" name="premise_no" value="<?php echo $row['premise_no']; ?>">
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="premise_no"><strong>Premise Number:</strong></label>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="premise_name">Premise Name:</label>
-                                        <input type="text" class="form-control" value="<?php echo $row['premise_name']; ?>" id="email" name="email">
+                                    <div class="col-sm-8">
+                                        <?php echo $row['premise_no']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="premise_name"><strong>Premise Name:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['premise_name']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="premise_type"><strong>Premise Type:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['premise_type']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="tel_no"><strong>Telephone Number:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['tel_no']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="email"><strong>Email:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['email']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="address"><strong>Address:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['address']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="county_code"><strong>County Code:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['county_code']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="county"><strong>County:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['county']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="sub_county"><strong>Sub County:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['sub_county']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="ward"><strong>Ward:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['ward']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="town"><strong>Town:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['town']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="street"><strong>Street:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['street']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="plot_no"><strong>Plot Number:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['plot_no']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="license_no"><strong>License Number:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['license_no']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="reg_date"><strong>Registered On:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['reg_date']; ?>
+                                    </div>
+
+                                    <div class=" col-md-4">
+                                        <label class="control-label" for="expiry"><strong>Active Until:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['expiry']; ?>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label class="control-label" for="status"><strong>Status:</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <?php echo $row['status']; ?>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Premise Type:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Tel No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" value="Update" onclick="window.location.href='edit.php'"> Update</button>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Email:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Address:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">County:</label>
-                                        <select class="form-control">
-                                            <option>Mombasa</option>
-                                            <option>Nairobi</option>
-                                            <option>Busia</option>
-                                            <option>Naivasha</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">SubCounty:</label>
-                                        <select class="form-control">
-                                            <option>Kisauni</option>
-                                            <option>Starehe</option>
-                                            <option>Butula</option>
-                                            <option>Naivasha</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Ward:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Town:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Street:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Plot No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">License No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Status.:</label>
-                                        <select class="form-control">
-                                            <option>Active</option>
-                                            <option>Inactive</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
-                                        <input type="submit" value="Submit" class="btn btn-primary">
                             </form>
                         </div>
                     </div>
                 </div>
+
+
                 <!-- /.container-fluid -->
 
                 <!-- Sticky Footer -->

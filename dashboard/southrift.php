@@ -187,7 +187,7 @@ if (!$conn) {
       <th>Expiry</th>
       <th>Action</th>
   </tr>";
-        while ($row = mysqli_fetch_array($result)) {
+              while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
                 echo "<td>" . $row['premise_no'] . "</td>";
                 echo "<td>" . $row['premise_name'] . "</td>";
@@ -195,13 +195,16 @@ if (!$conn) {
                 echo "<td>" . $row['license_no'] . "</td>";
                 echo "<td>" . $row['status'] . "</td>";
                 echo "<td>" . $row['expiry'] . "</td>";
-                echo '<td><div align="center"><a rel="facebox" href="?id=' . $row['s/no'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['s/no'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
+                echo '<td><div align="center"><a rel="facebox" href="view_southrift.php?id=' . $row['pr_id'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['pr_id'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
                 echo "</tr>";
               }
               echo "</table>";
             }
           }
           ?>
+          <form>
+            <input type="hidden" name="pr_id" value="<?php echo $row['pr_id']; ?>" />
+          </form>
 
 
 

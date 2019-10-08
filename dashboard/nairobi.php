@@ -199,7 +199,7 @@ if (!$conn) {
                 echo "<td>" . $row['license_no'] . "</td>";
                 echo "<td>" . $row['status'] . "</td>";
                 echo "<td>" . $row['expiry'] . "</td>";
-                echo '<td><div align="center"><a rel="facebox" href="?id=' . $row['s/no'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['s/no'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
+                echo '<td><div align="center"><a rel="facebox" href="view_nairobi.php?id=' . $row['pr_id'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['pr_id'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
                 echo "</tr>";
               }
               echo "</table>";
@@ -207,6 +207,9 @@ if (!$conn) {
           }
           ?>
 
+          <form>
+            <input type="hidden" name="pr_id" value="<?php echo $row['pr_id']; ?>" />
+          </form>
 
 
 
