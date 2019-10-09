@@ -207,10 +207,6 @@ if (!$conn) {
           }
           ?>
 
-          <form>
-            <input type="hidden" name="pr_id" value="<?php echo $row['pr_id']; ?>" />
-          </form>
-
 
 
 

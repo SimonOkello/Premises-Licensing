@@ -125,8 +125,9 @@ session_start();
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                             }
+                            $_SESSION['view_id'] = $pr_id;
                             ?>
-                            <form action="view.php" method="POST" role="form" class="form-horizontal">
+                            <form action="view_mtkenya.php" method="POST" role="form" class="form-horizontal">
                                 <div class="form-group row">
                                     <div class="col-sm-4">
                                         <label class="control-label" for="premise_no"><strong>Premise Number:</strong></label>
@@ -241,7 +242,7 @@ session_start();
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" value="Update" onclick="window.location.href='edit.php'"> Update</button>
+                                        <a rel="facebox" class="btn btn-primary" href="edit_mtkenya.php?id=' . $row['pr_id'] . '">Update</a>
                                     </div>
                                 </div>
                             </form>

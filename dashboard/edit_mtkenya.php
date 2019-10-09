@@ -114,106 +114,120 @@ session_start();
                         <br><br><br><br><br><br>
                         <!--Add Premise-->
                         <div class="container">
-                            <h2>Edit Premise</h2>
+                            <h3 style="color:dodgerblue">Edit Premise</h3>
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "premises");
                             if (!$conn) {
                                 echo "Database connection failed...";
                             }
-                            if (isset($_GET['id'])) {
-                                $pr_id = $_GET['id'];
-                                $query = "SELECT * FROM coast where pr_id= '$pr_id'";
-                                $result = mysqli_query($conn, $query);
-                                $row = mysqli_fetch_assoc($result);
-                            }
+
+                            $pr_id = $_SESSION['view_id'];
+                            $query = "SELECT * FROM mountkenya where pr_id= '$pr_id' ";
+                            $result = mysqli_query($conn, $query);
+                            $row = mysqli_fetch_assoc($result);
+
+
                             ?>
-                            <form action="edit.php">
+                            <form action="edit_mtkenya.php" method="POST" class="form-horizontal">
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <label for="premise_no">Premise Number:</label>
-                                        <input type="text" class="form-control" id="email" name="premise_no" value="<?php echo $row['premise_no']; ?>">
+                                        <label for="premise_no"><strong>Premise Number:</strong></label>
+                                        <input type="text" class="form-control" readonly="readonly" name="premise_no" value="<?php echo $row['premise_no']; ?>">
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="premise_name">Premise Name:</label>
-                                        <input type="text" class="form-control" value="<?php echo $row['premise_name']; ?>" id="email" name="email">
+                                        <label for="premise_name"><strong>Premise Name:</strong></label>
+                                        <input type="text" class="form-control" value="<?php echo $row['premise_name']; ?>" name="premise_name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="email">Premise Type:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="premise_type"><strong>Premise Type:</strong></label>
+                                        <input type="text" value="<?php echo $row['premise_type']; ?>" class="form-control" name="premise">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email">Tel No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Email:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Address:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="tel_no"><strong>Telephone Number.:</strong></label>
+                                        <input type="text" value="<?php echo $row['tel_no']; ?>" class="form-control" name="tel_no">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="email">County:</label>
+                                        <label for="email"><strong>Email:</strong></label>
+                                        <input type="email" value="<?php echo $row['email']; ?>" class="form-control" name="email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="address"><strong>Address:</strong></label>
+                                        <input type="text" value="<?php echo $row['address']; ?>" class="form-control" name="address">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <label for="county"><strong>County:</strong></label>
                                         <select class="form-control">
-                                            <option>Mombasa</option>
-                                            <option>Nairobi</option>
-                                            <option>Busia</option>
-                                            <option>Naivasha</option>
+                                            <option value="<?php echo $row['county']; ?>"><?php echo $row['county']; ?></option>
+                                            <option value="Makindu">Nairobi</option>
+                                            <option value="Emali">Emali</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email">SubCounty:</label>
+                                        <label for="sub_county"><strong>SubCounty:</strong></label>
                                         <select class="form-control">
-                                            <option>Kisauni</option>
-                                            <option>Starehe</option>
-                                            <option>Butula</option>
-                                            <option>Naivasha</option>
+                                            <option value="<?php echo $row['sub_county']; ?>"><?php echo $row['sub_county']; ?></option>
+                                            <option value="Makindu">Makindu</option>
+                                            <option value="Emali">Emali</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="email">Ward:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="ward"><strong>Ward:</strong></label>
+                                        <input type="text" value="<?php echo $row['ward']; ?>" class="form-control" name="ward">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email">Town:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <label for="email">Street:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email">Plot No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="town"><strong>Town:</strong></label>
+                                        <input type="text" value="<?php echo $row['town']; ?>" class="form-control" name="town">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-6">
-                                        <label for="email">License No.:</label>
-                                        <input type="email" class="form-control" id="email" name="email">
+                                        <label for="street"><strong>Street:</strong></label>
+                                        <input type="text" value="<?php echo $row['street']; ?>" class="form-control" name="street">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email">Status.:</label>
+                                        <label for="plot_no"><strong>Plot Number.:</strong></label>
+                                        <input type="text" value="<?php echo $row['plot_no']; ?>" class="form-control" name="plot_no">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <label for="license_no"><strong>License Number.:</strong></label>
+                                        <input type="text" value="<?php echo $row['license_no']; ?>" class="form-control" name="license_no">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email"><strong>Registered On.:</strong></label>
+                                        <input type="text" value="<?php echo $row['reg_date']; ?>" class="form-control" name="reg_date">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <label for="expiry"><strong>Valid Until.:</strong></label>
+                                        <input type="text" value="<?php echo $row['expiry']; ?>" class="form-control" name="expiry">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email"><strong>Status.:</strong></label>
                                         <select class="form-control">
-                                            <option>Active</option>
-                                            <option>Inactive</option>
+                                            <option value="<?php echo $row['status']; ?>"><?php echo $row['status']; ?></option>
+                                            <option value="Active">Active</option>
+                                            <option value="Expired">Expired</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input type="submit" value="Submit" class="btn btn-primary">
+                                        <input type="submit" name="update" value="Submit" class="btn btn-primary">
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

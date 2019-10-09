@@ -125,7 +125,7 @@ session_start();
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                             }
-
+                            $_SESSION['view_id'] = $pr_id;
                             ?>
                             <form action="view_coast.php" method="POST" role="form" class="form-horizontal">
 
@@ -241,10 +241,10 @@ session_start();
                                         <?php echo $row['status']; ?>
                                     </div>
                                 </div>
-                                <input type="hidden" name="pr_id" value="<?php echo $pr_id; ?>" />
+
                                 <div class="form-group row">
                                     <div class="col-md-4">
-                                        <a rel="facebox" class="btn btn-primary" href="edit.php?id=' . $row['pr_id'] . '">Update</a>
+                                        <a rel="facebox" class="btn btn-primary" href="edit_coast.php?id=' . $row['pr_id'] . '">Update</a>
                                     </div>
                                 </div>
                             </form>
