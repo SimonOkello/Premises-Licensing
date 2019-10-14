@@ -162,18 +162,18 @@ session_start();
                                 <div class="form-group row">
                                     <div class="col-md-6">
                                         <label for="county"><strong>County:</strong></label>
-                                        <select class="form-control">
-                                            <option value="<?php echo $row['county']; ?>"><?php echo $row['county']; ?></option>
-                                            <option value="Makindu">Nairobi</option>
-                                            <option value="Emali">Emali</option>
-                                        </select>
+                                        <input type="text" value="<?php echo $row['county']; ?>" class="form-control" name="address">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="sub_county"><strong>SubCounty:</strong></label>
                                         <select class="form-control">
                                             <option value="<?php echo $row['sub_county']; ?>"><?php echo $row['sub_county']; ?></option>
-                                            <option value="Makindu">Makindu</option>
-                                            <option value="Emali">Emali</option>
+                                            <option value="Jomvu">Jomvu</option>
+                                            <option value="Changamwe">Changamwe</option>
+                                            <option value="Likoni">Likoni</option>
+                                            <option value="Kisauni">Kisauni</option>
+                                            <option value="Nyali">Nyali</option>
+                                            <option value="Mtiva">Mvita</option>
 
                                         </select>
                                     </div>

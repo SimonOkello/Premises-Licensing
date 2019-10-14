@@ -242,7 +242,7 @@ session_start();
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4">
-                                        <a rel="facebox" class="btn btn-primary" href="edit_nairobi.php?id=' . $row['pr_id'] . '">Update</a>
+                                        <a rel="facebox" class="btn btn-primary" href="edit_nairobi.php?id=' . $row['pr_id'] . '">Update data</a>
                                     </div>
                                 </div>
                             </form>
@@ -298,12 +298,4 @@ session_start();
         <script src="js/sb-admin.min.js"></script>
 
 </body>
-<script>
-    //pagination
-    $(document).ready(function() {
-        $('#dtBasicExample').DataTable();
-        $('.dataTables_length').addClass('bs-select');
-    });
-</script>
-
 </html>

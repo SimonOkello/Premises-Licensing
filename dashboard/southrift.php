@@ -1,12 +1,7 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "premises");
 
-if (!$conn) {
-  echo "Database connection failed...";
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +23,8 @@ if (!$conn) {
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+
+
 
 </head>
 
@@ -109,7 +106,7 @@ if (!$conn) {
           <li class="breadcrumb-item">
             <a href="home.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">South Rift</li>
+          <li class="breadcrumb-item active">Coast</li>
         </ol>
 
         <!-- Page Content -->
@@ -170,58 +167,80 @@ if (!$conn) {
             </div>
           </div>
           <br><br><br>
+
           <?php
+          $conn = mysqli_connect("localhost", "root", "", "premises");
 
-          $sql = 'SELECT * FROM southrift';
-          $result = mysqli_query($conn, $sql);
+          if (!$conn) {
+            echo "Database connection failed...";
+          }
 
-          if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              echo "<table class='table table-striped table-bordered table-sm'>
-<tr>
-  <th>Premise No.</th>
-      <th>Name</th>
-      <th>County</th>
-      <th>License No.</th>
-      <th>Status</th>
-      <th>Expiry</th>
-      <th>Action</th>
-  </tr>";
-              while ($row = mysqli_fetch_array($result)) {
-                echo "<tr>";
-                echo "<td>" . $row['premise_no'] . "</td>";
-                echo "<td>" . $row['premise_name'] . "</td>";
-                echo "<td>" . $row['county'] . "</td>";
-                echo "<td>" . $row['license_no'] . "</td>";
-                echo "<td>" . $row['status'] . "</td>";
-                echo "<td>" . $row['expiry'] . "</td>";
-                echo '<td><div align="center"><a rel="facebox" href="view_southrift.php?id=' . $row['pr_id'] . '"><i class="fas fa-eye"></i></a> | <a href="? id="' . $row['pr_id'] . '" class="delbutton" title="Click To Delete"><i class="fas fa-trash"></i></a></div></td>';
-                echo "</tr>";
-              }
-              echo "</table>";
-            }
+          $sql = "SELECT * FROM southrift";
+          $result = $conn->query($sql);
+          $premises = [];
+          if ($result->num_rows > 0) {
+            $premises = $result->fetch_all(MYSQLI_ASSOC);
           }
           ?>
-
-
-
-
-
-
-          <!-- /.container-fluid -->
-
-          <!-- Sticky Footer -->
-          <footer class="sticky-footer">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
-              </div>
-            </div>
-          </footer>
+          <table id="premiseTable" class='table table-striped table-bordered table-sm'>
+            <thead class="thead-dark">
+              <th>Premise No.</th>
+              <th>Name</th>
+              <th>County</th>
+              <th>License No.</th>
+              <th>Status</th>
+              <th>Expiry</th>
+              <th>Action</th>
+            </thead>
+            <tbody>
+              <?php if (!empty($premises)) { ?>
+                <?php foreach ($premises as $premise) { ?>
+                  <tr>
+                    <td><?php echo $premise['premise_no']; ?></td>
+                    <td><?php echo $premise['premise_name']; ?></td>
+                    <td><?php echo $premise['county']; ?></td>
+                    <td><?php echo $premise['license_no']; ?></td>
+                    <td><?php echo $premise['status']; ?></td>
+                    <td><?php echo $premise['expiry']; ?></td>
+                    <td>
+                      <div align="center"><a rel="facebox" href="view_southrift.php?id=<?php echo $premise["pr_id"]; ?>"><i class="fas fa-eye"></i></a>|<a rel="facebox" href="#?id=<?php echo $premise["pr_id"]; ?>"><i class="fas fa-trash"></i></a></div>
+                    </td>
+                  </tr>
+                <?php } ?>
+              <?php } ?>
+            </tbody>
+          </table>
         </div>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css" />
+        <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+        <script>
+          $(document).ready(function() {
+            var table = $('#premiseTable').DataTable({
+              "pageLength": 15,
+            });
+
+          });
+        </script>
+
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy;2019 PCPB. All rights resrved.</span>
+            </div>
+          </div>
+        </footer>
       </div>
-      <!-- /.content-wrapper -->
     </div>
+    <!-- /.content-wrapper -->
+  </div>
   </div>
   <!-- /#wrapper -->
 
@@ -244,8 +263,8 @@ if (!$conn) {
     </div>
   </div>
 
+
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -254,7 +273,6 @@ if (!$conn) {
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin.min.js"></script>
   <script src="js/custom.js"></script>
-
 </body>
 
 </html>

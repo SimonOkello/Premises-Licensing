@@ -244,7 +244,7 @@ session_start();
 
                                 <div class="form-group row">
                                     <div class="col-md-4">
-                                        <a rel="facebox" class="btn btn-primary" href="edit_coast.php?id=' . $row['pr_id'] . '">Update</a>
+                                        <a rel="facebox" class="btn btn-primary" href="edit_coast.php?id=' . $row['pr_id'] . '">Update data</a>
                                     </div>
                                 </div>
                             </form>
